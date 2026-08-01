@@ -69,4 +69,14 @@ main.flex-layout {
   padding: 2rem 0;
 }
 
+/* Flex View - Gallery Slideshow */
+.gallery img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    display: block;
+}
+
+
+
 /* MAIN (GRID) */
