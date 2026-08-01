@@ -6,7 +6,7 @@
     /* TYPOGRAPHY */
     /* Fonts */
     --font-body: "Arial", sans-serif;
-    --font-decorative: "sloop-script-one", serif;
+    --font-decorative: "sloop-script-one", sans-serif;
 
     /* Sizing */
     --fs-xs: 0.75rem;
