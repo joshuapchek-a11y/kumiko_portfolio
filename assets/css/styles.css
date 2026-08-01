@@ -6,7 +6,7 @@
     /* TYPOGRAPHY */
     /* Fonts */
     --font-body: "Arial", sans-serif;
-    --font-decorative: "Sloop Serif", serif;
+    --font-decorative: "sloop-script-one", serif;
 
     /* Sizing */
     --fs-xs: 0.75rem;
@@ -38,7 +38,7 @@ body {
 h1 {
   font-family: var(--font-decorative);
   font-size: var(--fs-2xl);
-  font-weight: var(--fw-bold);
+  font-weight: var(--fw-medium);
 }
 
 h2 {
