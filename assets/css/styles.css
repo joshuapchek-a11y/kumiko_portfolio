@@ -2,6 +2,7 @@
     /* COLOURS */
     --color-background: #ffffff;
     --color-text: #000000;
+    --color-link:  #E0115f;
 
     /* TYPOGRAPHY */
     /* Fonts */
@@ -114,7 +115,7 @@ main.flex-layout > h1 {
 /* BODY (GRID) */
 body.grid-layout {
     display: grid;
-    grid-template-columns: 15% 2rem 1fr 1fr;
+    grid-template-columns: 15% 4rem 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas: 
         "nav nav nav nav"
@@ -124,29 +125,37 @@ body.grid-layout {
 /* NAV STYLING */
 nav {
     grid-area: nav;
+    position: sticky;
+    top: 0;
+    z-index: 10;
     background-color: var(--color-background);
     padding: 1rem;
+    background: transparent;
 }
 /* NAV Links */
 nav a {
+    display: block;
     text-align: left;
     padding: 0 0 0 1.8rem;
     margin: 0 0 0 0;
     font-family: var(--font-decorative);
     font-size: var(--fs-2xl);
     font-weight: var(--fw-medium);
-    
     text-decoration: none;
     color: var(--color-text);
 }
 /* SIDEBAR */
 sidebar {
     grid-area: sidebar;
+    position: sticky;
+    top: 12rem;
+    z-index: 5;
     background-color: var(--color-background);
     padding-left: 1rem;
     padding-top: 1rem;
-    align-items: center;
+    align-items: top;
     justify-content: center;
+    align-self: start;
 }   
 /* SIDEBAR LINKS */
 sidebar a {
@@ -163,13 +172,58 @@ sidebar a {
 
 sidebar a:hover {
     text-decoration: underline;
-    color: #E0115f;
+    color: var(--color-link);
 }
 
 /* MAIN (GRID) */
 
-main.grid-layout {
+main {
     grid-area: main;
     background-color: var(--color-background);
-    padding: 1rem;
+    padding: 0rem;
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1rem;;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "col1 col2";
+    column-gap: 4rem;
+    min-height: 200vh;
 }
+
+/* COLUMNS */
+
+main > col1 {
+    grid-area: col1;
+    background-color: var(--color-background);
+    padding: 0rem;
+
+}
+
+col1 img {
+    max-width: 80%;
+    height: auto;
+    aspect-ratio: 16/11;
+    object-fit: cover;
+    display: block;
+    padding-bottom: 4rem;
+}
+
+main > col2 {
+    grid-area: col2;
+    background-color: var(--color-background);
+    padding: 0rem;
+
+}
+
+col2 img {
+    max-width: 80%;
+    height: auto;
+    aspect-ratio: 16/11;
+    object-fit: cover;
+    display: block;
+    padding-bottom: 4rem;
+}
+
+
+
