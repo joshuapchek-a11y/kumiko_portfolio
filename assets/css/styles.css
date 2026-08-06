@@ -179,6 +179,7 @@ sidebar a:hover {
 
 main {
     grid-area: main;
+    position: relative;
     background-color: var(--color-background);
     padding: 0rem;
     padding-top: 2rem;
@@ -189,6 +190,7 @@ main {
     "col1 col2";
     column-gap: 4rem;
     min-height: 200vh;
+    overflow: hidden;
 }
 
 /* COLUMNS */
@@ -225,5 +227,42 @@ col2 img {
     padding-bottom: 4rem;
 }
 
+/* CSS Overlay */
+main .overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    display: flex;
+    align-items: top;
+    justify-content: left;
+    font-size: var(--fs-2xl);
+    pointer-events: none;
+    padding-left: 2rem;
+    display: none;
+}
 
+main .overlay.active {
+    display: flex;
+}
+
+main div {
+    animation: 750ms 1 forwards ani;
+}
+
+main img {
+    cursor:pointer
+}
+
+@keyframes ani {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
