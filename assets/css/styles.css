@@ -78,6 +78,17 @@ h6 {
     margin-bottom: 0;
 }
 
+h1.wrap-long-word,
+h2.wrap-long-word,
+h3.wrap-long-word,
+h4.wrap-long-word,
+h5.wrap-long-word,
+h6.wrap-long-word {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: auto;
+}
+
 p {
   font-size: var(--fs-md);
 }
@@ -133,6 +144,7 @@ nav {
     padding: 1rem;
     background: transparent;
 }
+
 /* NAV Links */
 nav a {
     display: block;
@@ -144,6 +156,27 @@ nav a {
     font-weight: var(--fw-medium);
     text-decoration: none;
     color: var(--color-text);
+}
+
+@media (max-width: 1050px) {
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 0;
+        padding: 1rem;
+        background-color: var(--color-background);
+    }
+
+    nav a {
+        display: inline-block;
+        text-align: center;
+        padding: 0 1rem;
+        margin: 0 0.5rem;
+        font-size: calc(var(--fs-2xl) * 0.9);
+        white-space: nowrap;
+    }
 }
 
 /* SIDEBAR */
@@ -178,54 +211,52 @@ sidebar a:hover {
     color: var(--color-link);
 }
 
+@media (max-width: 1050px) {
+    sidebar {
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+    }
+
+    sidebar a {
+        padding: 0;
+    }
+}
+
 /* MAIN (GRID) */
 main {
     grid-area: main;
     position: relative;
     background-color: var(--color-background);
-    padding: 0rem;
+    padding: 0 3.5rem 0 0;
     padding-top: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1rem;;
-    grid-template-rows: auto;
-    grid-template-areas:
-    "col1 col2";
-    column-gap: 4rem;
-    min-height: 200vh;
+    display: block;
     overflow: hidden;
 }
 
-/* COLUMNS */
-main > col1 {
-    grid-area: col1;
-    background-color: var(--color-background);
-    padding: 0rem;
+main.work-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4rem 2rem;
+    align-items: start;
+    min-height: 0;
+    height: auto;
+    padding: 1rem 3.5rem;
 }
 
-col1 img {
-    max-width: 100%;
+main img {
+    width: 100%;
     height: auto;
-    aspect-ratio: 16/11;
+    aspect-ratio: 16 / 11;
     object-fit: cover;
     display: block;
-    padding-bottom: 4rem;
+    padding-bottom: 0;
 }
 
-main > col2 {
-    grid-area: col2;
-    background-color: var(--color-background);
-    padding: 0rem;
 
-}
-
-col2 img {
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: 16/11;
-    object-fit: cover;
-    display: block;
-    padding-bottom: 4rem;
-}
 
 /* CSS Overlay */
 main .overlay {
@@ -243,6 +274,11 @@ main .overlay {
     margin-right: 4rem;
     border-right: 4rem;
     display: none;
+    overflow-y: auto;
+}
+
+main article {
+    grid-area: 1;
 }
 
 column-unit a {
@@ -274,6 +310,13 @@ bodycopy .copy {
     width: 100%;
 }
 
+bodycopy .copy {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
 main div {
     animation: 750ms 1 forwards ani;
 }
@@ -290,12 +333,25 @@ main div {
 }
 
 main .thumb {
-    cursor:pointer
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+    display: block;
+    aspect-ratio: 16 / 11;
+    object-fit: cover;
+    object-position: center;
 }
 
 main .workimage {
-    padding: 2rem;
-    max-width: 40%
+    padding: 0;
+    width: calc(50% - 0.5rem);
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 11;
+    object-fit: cover;
+    display: block;
 }
 
 main .exit {
@@ -313,5 +369,41 @@ main .exit:hover {
     color: var(--color-link);
 }
 
+@media (max-width: 1050px) {
+    body.grid-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "nav"
+            "sidebar"
+            "main";
+    }
+    sidebar {
+        position: relative;
+        top: 0;
+        padding-left: 0rem;
+        padding-top: 0rem;
+        align-items: center;
+        justify-content: center;
+    }
 
+    main {
+        grid-template-columns: 1fr;
+        padding-left: 2rem;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "col1"
+            "col2";
+        column-gap: 0rem;
+    }
+    .work-gallery {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 2rem 0rem;
+        align-items: center;
+        min-height: auto;
+        height: auto;
+        padding: 1rem 0rem 0 0;
+    }
+}
 

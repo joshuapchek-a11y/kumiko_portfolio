@@ -17,16 +17,15 @@
     <a href="../home/index.html">Kumiko Delaney</a>
 </nav>
 <sidebar> <a href="../work/index.html" style="color: var(--color-link);">Work</a><br><a href="../miniatures/index.html">Miniatures</a><br><a href="../about/index.html">About+CV</a></sidebar>
-<main>
-    <col1> 
-    <img class="thumb" src="../../assets/img/fruit/fruit1.jpg" alt="a ceramic square watermelon hanging by chain">
-    <img class="thumb" src="../../assets/img/fruit/fruit1.jpg" alt="a ceramic square watermelon hanging by chain">
-    </col1>
-    <col2>
-    <img class="thumb" src="../../assets/img/fruit/fruit1.jpg" alt="a ceramic square watermelon hanging by chain">
-    <img class="thumb" src="../../assets/img/fruit/fruit1.jpg" alt="a ceramic square watermelon hanging by chain">
-    </col2>
-    <div class="overlay">
+<main class="work-gallery">
+    <img class="thumb" data-overlay="overlay-1" src="../../assets/img/fruit/fruit1.jpg" alt="a ceramic square watermelon hanging by chain">
+    <img class="thumb" data-overlay="overlay-3" src="../../assets/img/fruit/fruit1.jpg" alt="a ceramic square watermelon hanging by chain">
+    <img class="thumb" data-overlay="overlay-2" src="../../assets/img/unwind/unwind1.jpg" alt="the unwind in Nishitokorozawa installation image">
+    <img class="thumb" data-overlay="overlay-4" src="../../assets/img/fruit/fruit1.jpg" alt="a ceramic square watermelon hanging by chain">
+
+
+    <!-- OVERLAYS -->
+    <div class="overlay" id="overlay-1">
         <bodycopy> 
             <!-- exit buttom top right -->
         <a href="#" class="exit">(exit)</a>    
@@ -34,17 +33,43 @@
         <span class="title">
             <h4>Forbidden Fruit</h4>
             <h5>2023</h5>
-            <h5>Earthenware, Chain, Ribbon</h5>
+            <h5>Earthenware, chain, ribbon</h5>
         </span>
         <span class="copy">
             <img class="workimage" src="../../assets/img/fruit/fruit1.jpg" alt="a ceramic square watermelon hanging by chain"> <img class="workimage" src="../../assets/img/fruit/fruit1.jpg" alt="a ceramic square watermelon hanging by chain">
             <h6>Forbidden Fruit（禁断の果実）explores queer inequalities and restrictions depicted through the luxury fruit industry of Japan. Combined with aspects of 'Shunga' art. Luxury fruits are gifted in Japan as a sign of deep respect, loyalty and appreciation. I found this contradiction verytelling of the priorities of Japan.
                 Growing up half Japanese in Australia I tend to compare the two countries socially and politically. This installation is also a showcase of my appreciation for my two cultures as well as the difficulties I have avoided as a queer woman by growing up in Australia.</h6>
         </span>
-        
-
-
-    
+    </div>
+    <div class="overlay" id="overlay-2">
+        <bodycopy>
+            <a href="#" class="exit">(exit)</a>
+            <span class="title">
+                <h4>The Unwind in Nishitokorozawa </h4>
+                <h5>2023</h5>
+                <h5>Ceramic, wood, fabric</h5>
+            </span>
+            <span class="copy">
+                <img class="workimage" src="../../assets/img/unwind/unwind1.jpg" alt="the unwind in Nishitokorozawa installation image">
+                <img class="workimage" src="../../assets/img/unwind/unwind1.jpg" alt="the unwind in Nishitokorozawa installation image">
+                <h6>Visiting my grandparents in Nishitokorozawa and eating around their kotasu (dining table) is a cherished time for bonding, nourishment and unwinding. My grandmother's love transpires through her cooking. When we are apart, I must rely on connection through memory and the hope that I will see her again. The taste and smell of these dishes fade over time, to be revitalised when I am sitting in her presence again. Efforts to cherish these times together become overcrowded with the lingering fear of the unknown.</h6>
+            </span>
+        </bodycopy>
+    </div>
+    <div class="overlay" id="overlay-3">
+        <bodycopy>
+            <a href="#" class="exit">(exit)</a>
+            <span class="title">
+                <h4>Third Overlay</h4>
+                <h5>202X</h5>
+                <h5>xyx</h5>
+            </span>
+            <span class="copy">
+                <img class="workimage" src="../../assets/img/fruit/fruit1.jpg" alt="a ceramic square watermelon hanging by chain">
+                <h6>Third overlay content.</h6>
+            </span>
+        </bodycopy>
+    </div>
 </main>
 <script src="../../assets/js/scripts.js"></script>
 </body>
