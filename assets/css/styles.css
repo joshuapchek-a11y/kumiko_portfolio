@@ -274,9 +274,7 @@ main .overlay {
     margin-right: 4rem;
     border-right: 4rem;
     display: none;
-    overflow-y: auto;
 }
-
 main article {
     grid-area: 1;
 }
@@ -290,6 +288,11 @@ column-unit a {
 
 main .overlay.active {
     display: flex;
+    align-items: flex-start;
+}
+
+main.overlay-open {
+    overflow: visible;
 }
 
 main .overlay bodycopy {

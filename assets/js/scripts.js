@@ -1,9 +1,22 @@
-
-
 // OVERLAY
 const overlays = document.querySelectorAll('.overlay');
 const thumbs = document.querySelectorAll('.thumb');
 const exitButtons = document.querySelectorAll('.exit');
+const mainEl = document.querySelector('main.work-gallery');
+
+const ro = new ResizeObserver((entries) => {
+    for (const entry of entries) {
+        const overlay = entry.target.closest('.overlay');
+        if (overlay && overlay.classList.contains('active')) {
+            mainEl.style.minHeight = entry.contentRect.height + 'px';
+        }
+    }
+});
+
+overlays.forEach((overlay) => {
+    const content = overlay.querySelector('bodycopy');
+    if (content) ro.observe(content);
+});
 
 thumbs.forEach((thumb) => {
     thumb.addEventListener('click', (event) => {
@@ -19,13 +32,21 @@ thumbs.forEach((thumb) => {
         const targetOverlay = document.getElementById(targetOverlayId);
         if (targetOverlay) {
             targetOverlay.classList.add('active');
+            mainEl.classList.add('overlay-open');
+
+            const content = targetOverlay.querySelector('bodycopy');
+            requestAnimationFrame(() => {
+                if (content) mainEl.style.minHeight = content.scrollHeight + 'px';
+            });
         }
-            // TIMER
+
+        // TIMER
         setTimeout(() => {
-            myFunction();}, 500);
+            myFunction();
+        }, 500);
         function myFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
         }
     });
 });
@@ -37,6 +58,8 @@ exitButtons.forEach((exitButton) => {
         if (overlay) {
             overlay.classList.remove('active');
         }
+        mainEl.classList.remove('overlay-open');
+        mainEl.style.minHeight = '';
     });
 });
 
@@ -51,9 +74,3 @@ titleElements.forEach((title) => {
         title.classList.add('wrap-long-word');
     }
 });
-
-// document.addEventListener('keydown', (event) => {
-//     if (event.key === 'Escape') {
-//         overlays.forEach((overlay) => overlay.classList.remove('active'));
-//     }
-// });
