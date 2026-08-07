@@ -12,7 +12,7 @@
     /* Sizing */
     --fs-xs: 0.75rem;
     --fs-sm: 0.875rem;
-    --fs-md: 1rem;
+    --fs-md: 1.2rem;
     --fs-lg: 1.7rem;
     --fs-xl: 2.5rem;
     --fs-2xl: 5.5rem;
@@ -167,6 +167,7 @@ nav a {
         top: 0;
         padding: 1rem;
         background-color: var(--color-background);
+        padding-bottom: 0;
     }
 
     nav a {
@@ -176,6 +177,15 @@ nav a {
         margin: 0 0.5rem;
         font-size: calc(var(--fs-2xl) * 0.9);
         white-space: nowrap;
+    }
+}
+
+@media (max-width: 720px) {
+    nav a { 
+        font-size: calc(var(--fs-2xl) * 0.7)
+    }
+    body {
+        margin: 0;
     }
 }
 
@@ -223,6 +233,12 @@ sidebar a:hover {
 
     sidebar a {
         padding: 0;
+    }
+}
+
+@media (max-width: 720px) {
+    sidebar a { 
+        font-size: var(--fs-md)
     }
 }
 

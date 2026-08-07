@@ -55,6 +55,12 @@ h3 {
   line-height: var(--lh-tight);
 }
 
+h4 {
+  font-size: var(--fx-md);
+  font-weight: var(--fw-normal);
+
+}
+
 p {
   font-size: var(--fs-md);
 }
@@ -75,6 +81,19 @@ main.flex-layout {
   margin: 1rem 2rem 2rem 2rem;
 }
 
+
+main h1 {
+        display: inline-block;
+        text-align: center;
+        padding: 0 1rem;
+        margin: 0 0.5rem;
+        font-size: calc(var(--fs-2xl) * 0.9);
+        white-space: nowrap;
+      }
+
+
+
+
 /* Flex View - Gallery Slideshow */
 .gallery img {
     max-width: 100%;
@@ -89,7 +108,32 @@ main.flex-layout > h1 {
   margin: 0 0 1rem 0;
 }
 
+@media (max-width: 768px) {
+  body {
+    margin:0
+  }
+    main h1 {
+        display: inline-block;
+        text-align: center;
+        padding: 0 1rem;
+        margin: 0 0.5rem;
+        font-size: calc(var(--fs-2xl) * 0.62);
+        white-space: nowrap;
 
+    }
+}
+
+/* mobile guide */
+
+div .mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  div .mobile {
+    display: block;
+  }
+}
 
 /* Custom Cursor */
 body.cursor,
