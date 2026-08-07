@@ -25,7 +25,8 @@
     
     /* Line Heights */
     --lh-tight: 1;
-    --lh-normal: 1.8;
+    --lh-normal: 1.2;
+    --lh-large: 1.8
 }
 /* BODY */
 body {
@@ -73,10 +74,11 @@ h5 {
 h6 {
     font-size: var(--fs-lg);
     font-weight: var(--fw-normal);
-    line-height: var(--lh-tight);
-    margin-top: 0.5rem;
+    line-height: var(--lh-normal);
+    margin-top: 0;
     margin-bottom: 0;
 }
+
 
 h1.wrap-long-word,
 h2.wrap-long-word,
@@ -91,6 +93,7 @@ h6.wrap-long-word {
 
 p {
   font-size: var(--fs-md);
+  line-height: var(--lh-normal);
 }
 
 small {
@@ -139,15 +142,15 @@ nav {
     grid-area: nav;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 99999;
     background-color: var(--color-background);
     padding: 1rem;
     background: transparent;
+    mix-blend-mode: difference;
 }
 
 /* NAV Links */
 nav a {
-    display: block;
     text-align: left;
     padding: 0 0 0 1.8rem;
     margin: 0 0 0 0;
@@ -155,7 +158,7 @@ nav a {
     font-size: var(--fs-2xl);
     font-weight: var(--fw-medium);
     text-decoration: none;
-    color: var(--color-text);
+    color: white;
 }
 
 @media (max-width: 1050px) {
@@ -193,11 +196,11 @@ nav a {
 sidebar {
     grid-area: sidebar;
     position: sticky;
-    top: 12rem;
+    top: 9.5rem;
     z-index: 5;
     background-color: var(--color-background);
     padding-left: 1rem;
-    padding-top: 1rem;
+    padding-top: 0rem;
     align-items: top;
     justify-content: center;
     align-self: start;
@@ -209,7 +212,7 @@ sidebar a {
     font-family: var(--font-family);
     font-size: var(--fs-lg);
     font-weight: var(--fw-normal);
-    line-height: var(--lh-normal);
+    line-height: var(--lh-large);
     margin: 0;
     padding: 0 0 0 2rem;
     text-decoration: none;
@@ -256,7 +259,7 @@ main {
 main.work-gallery {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 4rem 2rem;
+    gap: 2rem 2rem;
     align-items: start;
     min-height: 0;
     height: auto;
@@ -327,6 +330,10 @@ main .overlay bodycopy {
 bodycopy .title,
 bodycopy .copy {
     width: 100%;
+}
+
+bodycopy .title {
+    padding-bottom: 1rem;
 }
 
 bodycopy .copy {
