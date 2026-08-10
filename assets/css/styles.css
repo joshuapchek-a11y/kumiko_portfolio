@@ -270,6 +270,28 @@ main.work-gallery {
     padding: 1rem 3.5rem;
 }
 
+main.work-gallery article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    align-items: start;
+}
+
+main.work-gallery article p {
+    margin: 0;
+    padding-top: 0.5rem;
+}
+
+main.work-gallery article p a {
+    text-decoration: none;
+    color: grey;
+}
+main.work-gallery article p a:hover {
+    text-decoration: none;
+    color: var(--color-link);
+}
+
 main img {
     width: 100%;
     height: auto;
