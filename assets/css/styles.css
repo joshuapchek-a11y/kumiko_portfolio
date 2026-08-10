@@ -278,6 +278,12 @@ main.work-gallery article {
     align-items: start;
 }
 
+@media (max-width: 720px) {
+    main.work-gallery article {
+        grid-template-columns: 1fr;
+    }
+}
+
 main.work-gallery article p {
     margin: 0;
     padding-top: 0.5rem;
@@ -293,6 +299,24 @@ main.work-gallery article p a:hover {
 }
 
 main img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 11;
+    object-fit: cover;
+    display: block;
+    padding-bottom: 0;
+}
+
+main img.home{
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: cover;
+    display: block;
+    padding-bottom: 0;
+}
+
+main video {
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 11;
