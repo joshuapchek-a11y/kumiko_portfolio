@@ -430,6 +430,20 @@ main .workimage {
     display: block;
 }
 
+@media (max-width: 720px) {
+    main.workimage {
+        object-fit: cover;
+        display: block;
+    }
+}
+
+main .fullimage {
+    padding: 0;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+}
+
 main .exit {
     position: absolute;
     top: 1.5rem;
