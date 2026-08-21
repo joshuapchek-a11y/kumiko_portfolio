@@ -16,6 +16,7 @@
     --fs-lg: 1.7rem;
     --fs-xl: 2.5rem;
     --fs-2xl: 5.5rem;
+    --fs-21xl: 5.5rem;
     --fs-3xl: 7rem;
 
     /* Font Weights */
@@ -28,6 +29,22 @@
     --lh-normal: 1.2;
     --lh-large: 1.8
 }
+
+@media (max-width: 720px) {
+:root {
+    --fs-xs: 0.75rem;
+    --fs-sm: 0.875rem;
+    --fs-md: 1.2rem;
+    --fs-lg: 1.3rem;
+    --fs-xl: 2rem;
+    --fs-2xl: 3.5rem;
+    --fs-21xl: 5.5rem;
+    --fs-3xl: 7rem;
+
+    }
+}
+
+
 /* BODY */
 body {
   font-family: var(--font-body);
@@ -134,7 +151,7 @@ body.grid-layout {
     grid-template-rows: auto;
     grid-template-areas: 
         "nav nav nav nav"
-        "sidebar . main main"
+        "sidebar . main main";
 }
 
 /* NAV STYLING */
@@ -180,7 +197,7 @@ nav a {
         text-align: center;
         padding: 0 1rem;
         margin: 0 0.5rem;
-        font-size: calc(var(--fs-2xl) * 0.9);
+        font-size: calc(var(--fs-21xl) * 0.9);
         white-space: nowrap;
         color: var(--color-text);
     }
@@ -189,7 +206,7 @@ nav a {
 
 @media (max-width: 720px) {
     nav a { 
-        font-size: calc(var(--fs-2xl) * 0.7)
+        font-size: calc(var(--fs-21xl) * 0.7)
     }
     body {
         margin: 0;
@@ -359,6 +376,7 @@ main .overlay.active {
     display: flex;
     align-items: flex-start;
 }
+
 
 main.overlay-open {
     overflow: visible;

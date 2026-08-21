@@ -68,9 +68,10 @@ const titleElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
 
 titleElements.forEach((title) => {
     const words = title.textContent.trim().split(/\s+/);
-    const hasLongWord = words.some((word) => word.replace(/[^a-zA-Z0-9]/g, '').length > 10);
+    const hasLongWord = words.some((word) => word.replace(/[^a-zA-Z0-9]/g, '').length > 8);
 
     if (hasLongWord) {
         title.classList.add('wrap-long-word');
     }
 });
+
