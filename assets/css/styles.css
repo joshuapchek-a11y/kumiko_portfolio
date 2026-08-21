@@ -380,6 +380,13 @@ main .overlay.active {
 
 main.overlay-open {
     overflow: visible;
+    overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Prevents padding from breaking 100% width */
 }
 
 main .overlay bodycopy {
@@ -391,8 +398,24 @@ main .overlay bodycopy {
     align-items: flex-start;
     padding-left: 0rem;
     padding-top: 1.5rem;
-    padding-right: 6.2rem;
+    padding-right: 3.5rem;
     gap: 0.5rem;
+}
+
+
+@media (max-width: 720px) {
+    main .overlay bodycopy {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    align-items: flex-start;
+    padding-left: 0rem;
+    padding-top: 1.5rem;
+    padding-right: 2.5rem;
+    gap: 0.5rem;
+}
 }
 
 bodycopy .title,
@@ -449,9 +472,10 @@ main .workimage {
 }
 
 @media (max-width: 720px) {
-    main.workimage {
+    main .workimage {
         object-fit: cover;
         display: block;
+        width: auto;
     }
 }
 
