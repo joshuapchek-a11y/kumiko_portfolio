@@ -213,6 +213,12 @@ nav a {
     }
 }
 
+@media (max-width: 720px) {
+    html { overflow-x: hidden !important; }
+    .bodycopy {overflow-y: hidden !important;}
+    .overlay {overflow-y: hidden !important;}
+}
+
 /* SIDEBAR */
 sidebar {
     grid-area: sidebar;

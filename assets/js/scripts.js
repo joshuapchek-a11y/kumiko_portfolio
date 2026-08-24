@@ -8,7 +8,7 @@ const ro = new ResizeObserver((entries) => {
     for (const entry of entries) {
         const overlay = entry.target.closest('.overlay');
         if (overlay && overlay.classList.contains('active')) {
-            mainEl.style.minHeight = entry.contentRect.height + 'px';
+            mainEl.style.minHeight = entry.contentRect.height + 'px' + '2rem';
         }
     }
 });
