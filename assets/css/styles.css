@@ -336,7 +336,7 @@ main.home-gallery {
     padding: 1rem 3.5rem;
 }
 
-main.work-gallery article {
+main.home-gallery article {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
