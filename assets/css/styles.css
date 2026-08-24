@@ -345,7 +345,7 @@ main.home-gallery article {
 }
 
 @media (max-width: 720px) {
-    main.home-gallery article {
+    main.home-gallery {
         grid-template-columns: 1fr;
     }
 }
