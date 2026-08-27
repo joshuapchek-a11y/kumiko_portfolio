@@ -14,6 +14,7 @@
     --fs-sm: 0.875rem;
     --fs-md: 1.2rem;
     --fs-lg: 1.7rem;
+    --fs-ml: 2rem;
     --fs-xl: 2.5rem;
     --fs-2xl: 5.5rem;
     --fs-21xl: 5.5rem;
@@ -23,11 +24,17 @@
     --fw-regular: 400;
     --fw-medium: 500;
     --fw-bold: 700;
-    
+
+    /* Ribbon */
+    --ribbon-size: clamp(24px, 3.2vw, 36px);
+    --gap: clamp(10px, 2vw, 22px);
+
     /* Line Heights */
     --lh-tight: 1;
     --lh-normal: 1.2;
     --lh-large: 1.8
+    
+    
 }
 
 @media (max-width: 720px) {
@@ -178,7 +185,7 @@ nav a {
     color: white;
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1020px) {
     nav {
         display: flex;
         justify-content: center;
@@ -231,17 +238,95 @@ sidebar {
     align-items: top;
     justify-content: center;
     align-self: start;
+    display: flex;
 }   
 
 /* SIDEBAR LINKS */
-sidebar a {
+
+.sidebar-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media (max-width: 1020px) {
+    .sidebar-list {
+    flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      justify-content: left;
+    }
+}
+
+/* SIDEBAR RIBBONS */
+
+.sidebar-list .ribbon {
+    position: absolute;
+    top: 40%;
+    width: var(--ribbon-size);
+    height: var(--ribbon-size);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.28s ease, transform 0.28s ease;
+    color: var(--ribbon)
+}
+
+.sidebar-link {
+    justify-content: center;
+    position: relative;
+    display: inline-flex;
+    width: fit-content;
+}
+
+.sidebar-link .ribbon svg {
+    display: block; width: 100%; height: 100%;
+}
+
+.sidebar-link .ribbon--left {
+    transform: translate(2px, -50%) scale(0.6) rotate(-12deg);
+}
+
+.sidebar-link .ribbon--right {
+    left: 45%;
+    transform: translate(-2px, -50%) scale(0.6) rotate(12deg);
+}
+
+.sidebar-link .ribbon--rite {
+    left: 70%;
+    transform: translate(-2px, -50%) scale(0.6) rotate(12deg);
+}
+
+.sidebar-link:hover .ribbon,
+.sidebar-link:focus-visible .ribbon {
+    opacity: 1;
+}
+
+.sidebar-link:hover .ribbon--left,
+.sidebar-link:focus-visible .ribbon--left {
+    transform: translate(calc(-1 * var(--gap)), -50%) scale(1) rotate(0deg);
+}
+.sidebar-link:hover .ribbon--right,
+.sidebar-link:focus-visible .ribbon--right,
+.sidebar-link:hover .ribbon--rite,
+.sidebar-link:focus-visible .ribbon--rite
+ {
+    transform: translate(var(--gap), -50%) scale(1) rotate(0deg);
+}
+
+.sidebar-link:focus-visible {
+    outline: 1.5px solid var(--ribbon);
+    outline-offset: 6px;
+    border-radius: 2px;
+}
+
+.sidebar-list a {
     text-align: left;
     font-family: var(--font-family);
     font-size: var(--fs-lg);
     font-weight: var(--fw-normal);
     line-height: var(--lh-large);
     margin: 0;
-    padding: 0 0 0 2rem;
     text-decoration: none;
     color: var(--color-text);
 }
@@ -251,7 +336,7 @@ sidebar a:hover {
     color: var(--color-link);
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1020px) {
     sidebar {
         position: static;
         display: flex;
@@ -536,7 +621,7 @@ main .exit:hover {
     color: var(--color-link);
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1020px) {
     body.grid-layout {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
