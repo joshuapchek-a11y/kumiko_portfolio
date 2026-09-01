@@ -2,7 +2,7 @@
 const cursor = document.getElementById('cursor');
 
 function goToHomePage() {
-    window.location.href = './pages/home/index.html';
+    window.location.href = './pages/home/';
 }
 
 if (cursor) {
