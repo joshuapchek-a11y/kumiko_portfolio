@@ -587,7 +587,7 @@ main .thumb {
     margin: 0 !important;
     display: block;
     aspect-ratio: 16 / 11;
-    object-fit: cover;
+    object-fit: fill;
     object-position: center;
 }
 
@@ -597,13 +597,13 @@ main .workimage {
     max-width: 100%;
     height: auto;
     aspect-ratio: 16 / 11;
-    object-fit: cover;
+    object-fit: fill;
     display: block;
 }
 
 @media (max-width: 720px) {
     main .workimage {
-        object-fit: cover;
+        object-fit: fill;
         display: block;
         width: auto;
     }
